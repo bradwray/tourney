@@ -1,0 +1,76 @@
+<script src="https://unpkg.com/vue"></script>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+<div id="app">
+  <p>{{ message }}</p>
+  <ul>
+    <input v-model="newSeed" @keyup.enter.native="seeds.push('jfgj')">
+    <button v-on:click="seeds.push(newSeed)">new seed</button>
+
+
+    <li v-for="seed in seeds">
+      <md-card>
+        <md-card-header>
+          {{seed}}
+        </md-card-header>
+      </md-card>
+    </li>
+  </ul>
+
+</div>
+<script id="jsbin-javascript">
+new Vue({
+    el: '#app',
+    data: {
+      message: 'Tournament',
+      seeds: [],
+
+    },
+    computed: {
+      addSeed() {
+
+      }
+    }
+  }
+
+
+)
+</script>
+<script id="jsbin-source-html" type="text/html"><script src="https://unpkg.com/vue"><\/script>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+<div id="app">
+  <p>{{ message }}</p>
+  <ul>
+    <input v-model="newSeed" @keyup.enter.native="seeds.push('jfgj')">
+    <button v-on:click="seeds.push(newSeed)">new seed</button>
+
+
+    <li v-for="seed in seeds">
+      <md-card>
+        <md-card-header>
+          {{seed}}
+        </md-card-header>
+      </md-card>
+    </li>
+  </ul>
+
+</div>
+</script>
+
+
+<script id="jsbin-source-javascript" type="text/javascript">new Vue({
+    el: '#app',
+    data: {
+      message: 'Tournament',
+      seeds: [],
+
+    },
+    computed: {
+      addSeed() {
+
+      }
+    }
+  }
+
+
+)
+</script>
