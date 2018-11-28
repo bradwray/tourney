@@ -1,76 +1,35 @@
-<script src="https://unpkg.com/vue"></script>
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
-<div id="app">
-  <p>{{ message }}</p>
-  <ul>
-    <input v-model="newSeed" @keyup.enter.native="seeds.push('jfgj')">
-    <button v-on:click="seeds.push(newSeed)">new seed</button>
+<script src="https://unpkg.com/vue">
+  matchup.style.setProperty('150', height + 'px')
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<body class="body">
+<div id="app" >
 
+  <p class="title">{{ title }}</p>
+  <div class="controls" v-if="vacancy">
+    <select v-model="numSeeds">
+  <option disabled value="">How many Seeds?</option>
+  <option>4</option>
+  <option>8</option>
+  <option>16</option>
+  <option>32</option>
+</select><br>
 
-    <li v-for="seed in seeds">
-      <md-card>
-        <md-card-header>
-          {{seed}}
-        </md-card-header>
-      </md-card>
-    </li>
-  </ul>
+    <input v-model="newSeed" v-on:keyup.enter="randomlySeed()"></input>
+    <button v-on:click="randomlySeed()">randomly seed</button></div>
+
+  <div class="wrapper">
+
+  
+    <div v-for="matchUp in matchUpRound">
+          <matchup 
+            v-bind:competitors='seeds' 
+            v-bind:matchup='matchUp' 
+            v-bind:name='newSeed'
+            v-on:winner="wins">
+          </matchup>
+    </div>
+  </div>
 
 </div>
-<script id="jsbin-javascript">
-new Vue({
-    el: '#app',
-    data: {
-      message: 'Tournament',
-      seeds: [],
-
-    },
-    computed: {
-      addSeed() {
-
-      }
-    }
-  }
-
-
-)
-</script>
-<script id="jsbin-source-html" type="text/html"><script src="https://unpkg.com/vue"><\/script>
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
-<div id="app">
-  <p>{{ message }}</p>
-  <ul>
-    <input v-model="newSeed" @keyup.enter.native="seeds.push('jfgj')">
-    <button v-on:click="seeds.push(newSeed)">new seed</button>
-
-
-    <li v-for="seed in seeds">
-      <md-card>
-        <md-card-header>
-          {{seed}}
-        </md-card-header>
-      </md-card>
-    </li>
-  </ul>
-
-</div>
-</script>
-
-
-<script id="jsbin-source-javascript" type="text/javascript">new Vue({
-    el: '#app',
-    data: {
-      message: 'Tournament',
-      seeds: [],
-
-    },
-    computed: {
-      addSeed() {
-
-      }
-    }
-  }
-
-
-)
-</script>
+</body>

@@ -1,0 +1,28 @@
+.title{
+  position: relative;
+  left: 43%;
+  font-size: 36px;
+  color: #3f4a6b;
+}
+
+.body{
+  background: #c7f9d8;
+}
+
+.controls{
+  position: relative;
+  left: 40%;
+
+}
+
+.box {
+  color: #555;
+  width: 10vw;
+}
+
+.won{
+  width: 10vw;
+  height: 3vw;
+}
+
+
